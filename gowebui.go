@@ -2,6 +2,7 @@ package gowebui
 
 import (
 	"fmt"
+	"time"
 	"runtime"
 	"sync"
 	"syscall"
@@ -115,6 +116,8 @@ func Initialize(mbPath, gonodePath string) bool {
 					if msg.Message == WM_QUIT {
 						goto Loop
 					}
+				} else {
+					time.Sleep(5 * time.Millisecond)
 				}
 			}
 		}
